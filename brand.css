@@ -1,0 +1,106 @@
+:root {
+    --brand-red: #D71920;
+    --brand-red-dark: #A90F14;
+    --brand-clay: #B86A4A;
+    --brand-paper: #F7F3EA;
+    --brand-mist: #ECE7DC;
+    --brand-stone: #CFC8BA;
+    --brand-gray: #6F6A61;
+    --brand-silver: #DED8CC;
+    --ink: #0B0B0D;
+    --paper: #FFFFFF;
+    --accent-primary: var(--brand-red);
+    --accent-secondary: var(--brand-clay);
+    --accent-lime: var(--brand-red);
+}
+
+body {
+    background: var(--brand-paper);
+}
+
+.nav-capsule {
+    background: rgba(247, 243, 234, 0.88);
+    border-color: rgba(11, 11, 13, 0.06);
+}
+
+.nav-capsule:hover {
+    background: rgba(247, 243, 234, 0.94);
+}
+
+.nav-links a:hover,
+.nav-links a.is-active {
+    background: var(--ink-900);
+}
+
+.btn {
+    background: var(--ink-900);
+    border-color: var(--ink-900);
+}
+
+.btn:hover {
+    background: var(--brand-paper);
+    color: var(--ink-900);
+}
+
+.btn-accent {
+    background: var(--brand-red);
+    color: #fff;
+    border-color: var(--brand-red);
+    box-shadow: 0 8px 24px rgba(215, 25, 32, 0.18);
+}
+
+.btn-accent:hover {
+    background: var(--brand-red-dark);
+    color: #fff;
+    border-color: var(--brand-red-dark);
+    box-shadow: 0 12px 30px rgba(215, 25, 32, 0.24);
+}
+
+.works-section,
+.trust-strip,
+.services,
+.cases {
+    background: var(--brand-paper);
+}
+
+.section-alt,
+.plans {
+    background: var(--brand-mist);
+}
+
+.work-image {
+    background: var(--brand-mist);
+}
+
+.trust-strip {
+    border-bottom-color: rgba(11, 11, 13, 0.06);
+}
+
+.trust-item {
+    color: rgba(11, 11, 13, 0.58);
+}
+
+.trust-dot {
+    background: var(--brand-stone);
+}
+
+.problem-card::after,
+.method-step::after,
+.plan-card::after {
+    background: var(--accent-secondary);
+}
+
+.problem-num,
+.step-num {
+    color: var(--brand-stone);
+}
+
+.service-grid,
+.plan-grid {
+    background: rgba(11, 11, 13, 0.09);
+    border-color: rgba(11, 11, 13, 0.09);
+}
+
+.service-card:hover {
+    background: #FBF8F1;
+}
