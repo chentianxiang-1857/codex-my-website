@@ -70,6 +70,36 @@ body {
 
 .contact-cta {
     flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-cta .btn {
+    min-width: 184px;
+    padding: 1rem 2.2rem;
+    border-radius: 2px;
+    text-align: center;
+    box-shadow: none;
+}
+
+.contact-cta .btn-accent {
+    box-shadow: 0 10px 28px rgba(215, 25, 32, 0.2);
+}
+
+.contact-cta .btn-wechat {
+    border-color: var(--brand-paper);
+}
+
+.contact-cta .btn-ghost {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.86);
+    border-color: rgba(247, 243, 234, 0.52);
+}
+
+.contact-cta .btn-ghost:hover {
+    background: var(--brand-paper);
+    color: var(--ink-900);
+    border-color: var(--brand-paper);
 }
 
 .contact-channels {
