@@ -10,11 +10,10 @@
     <!-- 导航 -->
     <nav class="navbar">
         <div class="nav-capsule">
-            <div class="nav-logo">
+            <a href="#hero" class="nav-logo" aria-label="返回首页">
                 <img src="images/logo-light-trim.png" alt="方法想象">
-            </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="#hero">首页</a></li>
                 <li><a href="#method">方法</a></li>
                 <li><a href="#cases">项目实践</a></li>
                 <li><a href="#services">服务</a></li>
@@ -283,8 +282,10 @@
                     <p class="section-eyebrow">关于发起人 / About</p>
                     <h2 class="about-h2">陈天翔</h2>
                     <p class="about-lead">前阿里巴巴 / 蚂蚁集团高级创意设计专家，长期参与互联网平台级品牌、营销与公共项目的视觉系统建设。</p>
-                    <p class="about-body">从大厂创意系统到独立品牌顾问实践，方法想象® 关注的不只是单次设计交付，而是帮助企业建立长期可复用的品牌判断、视觉方法与商业表达系统。</p>
-                    <p class="about-body">主导的「砀山模式」公益助农设计与 smart FIT 视障辅助产品设计，获得红点奖、金投赏、A Design Award 等国际奖项，被业界视为以品牌方法驱动社会价值的典型实践案例。</p>
+                    <div class="about-copy">
+                        <p class="about-body">从大厂创意系统到独立品牌顾问实践，方法想象® 关注的不只是单次设计交付，而是帮助企业建立长期可复用的品牌判断、视觉方法与商业表达系统。</p>
+                        <p class="about-body">主导的「砀山模式」公益助农设计与 smart FIT 视障辅助产品设计，获得红点奖、金投赏、A Design Award 等国际奖项，被业界视为以品牌方法驱动社会价值的典型实践案例。</p>
+                    </div>
                     <ul class="awards-list">
                         <li>Red Dot Design Award</li>
                         <li>iF Social Impact Prize</li>
@@ -309,9 +310,9 @@
                     <h3>品牌诊断会</h3>
                     <p class="plan-desc">2-4小时深度诊断，理清品牌定位、视觉策略与核心问题，输出诊断报告与行动建议。</p>
                     <dl class="plan-meta">
-                        <dt>适合客户</dt><dd>品牌初创期、转型期、定位模糊的企业</dd>
-                        <dt>合作周期</dt><dd>1-2周</dd>
-                        <dt>交付内容</dt><dd>品牌诊断报告 / 视觉策略建议 / 行动路线图</dd>
+                        <div><dt>适合客户</dt><dd>品牌初创期、转型期、定位模糊的企业</dd></div>
+                        <div><dt>合作周期</dt><dd>1-2周</dd></div>
+                        <div><dt>交付内容</dt><dd>品牌诊断报告 / 视觉策略建议 / 行动路线图</dd></div>
                     </dl>
                 </div>
                 <div class="plan-card">
@@ -319,9 +320,9 @@
                     <h3>项目制设计</h3>
                     <p class="plan-desc">针对具体项目（品牌系统、包装、传播物料）提供完整设计服务，从判断到落地一站式交付。</p>
                     <dl class="plan-meta">
-                        <dt>适合客户</dt><dd>有明确项目需求、预算与时间节点的企业</dd>
-                        <dt>合作周期</dt><dd>1-3个月</dd>
-                        <dt>交付内容</dt><dd>完整设计方案 / 应用手册 / 落地执行支持</dd>
+                        <div><dt>适合客户</dt><dd>有明确项目需求、预算与时间节点的企业</dd></div>
+                        <div><dt>合作周期</dt><dd>1-3个月</dd></div>
+                        <div><dt>交付内容</dt><dd>完整设计方案 / 应用手册 / 落地执行支持</dd></div>
                     </dl>
                 </div>
                 <div class="plan-card">
@@ -329,9 +330,9 @@
                     <h3>长期品牌视觉顾问</h3>
                     <p class="plan-desc">作为外部品牌视觉负责人，参与关键决策、把控设计质量、协同内部团队长期演化。</p>
                     <dl class="plan-meta">
-                        <dt>适合客户</dt><dd>无专属CDO、但视觉决策频繁的成长型企业</dd>
-                        <dt>合作周期</dt><dd>6-12个月</dd>
-                        <dt>交付内容</dt><dd>品牌月度会 / 关键项目评审 / 团队赋能培训</dd>
+                        <div><dt>适合客户</dt><dd>无专属CDO、但视觉决策频繁的成长型企业</dd></div>
+                        <div><dt>合作周期</dt><dd>6-12个月</dd></div>
+                        <div><dt>交付内容</dt><dd>品牌月度会 / 关键项目评审 / 团队赋能培训</dd></div>
                     </dl>
                 </div>
             </div>
@@ -342,12 +343,23 @@
     <section id="contact" class="contact section--dark">
         <div class="container">
             <div class="contact-content">
+                <p class="section-eyebrow">开始一次判断 / Contact</p>
                 <h2 class="contact-h2">如果你的品牌已经不缺设计执行，<br>但缺少判断和系统，我们可以聊聊。</h2>
+                <p class="contact-sub">适合在品牌定位、视觉系统、包装与传播物料、AI设计流程建设等关键节点，先用一次清晰的诊断把问题说透。</p>
                 <div class="contact-cta">
                     <a href="mailto:childe-chan@qq.com" class="btn btn-accent">预约沟通</a>
                     <a href="#services" class="btn btn-ghost">查看服务方案</a>
                 </div>
-                <p class="contact-info">邮箱: childe-chan@qq.com</p>
+                <div class="contact-channels">
+                    <div class="contact-channel">
+                        <p class="channel-label">Email</p>
+                        <a class="channel-value" href="mailto:childe-chan@qq.com">childe-chan@qq.com</a>
+                    </div>
+                    <div class="contact-channel">
+                        <p class="channel-label">Focus</p>
+                        <p class="channel-value">品牌诊断 / 视觉系统 / AI工作流</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -357,5 +369,51 @@
             <p>&copy; 2026 方法想象®. 保留所有权利.</p>
         </div>
     </footer>
+    <script>
+        (() => {
+            const sections = [...document.querySelectorAll('section[id]')];
+            const navLinks = [...document.querySelectorAll('.nav-links a')];
+            const revealTargets = [
+                ...document.querySelectorAll('.section-head, .method-step, .case-item, .service-card, .problem-card, .plan-card, .about-grid, .contact-content')
+            ];
+
+            document.documentElement.classList.add('js-enabled');
+
+            const setActiveLink = (id) => {
+                navLinks.forEach((link) => {
+                    link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+                });
+            };
+
+            const navObserver = new IntersectionObserver((entries) => {
+                const visible = entries
+                    .filter((entry) => entry.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+                if (visible) {
+                    setActiveLink(visible.target.id);
+                }
+            }, {
+                rootMargin: '-30% 0px -55% 0px',
+                threshold: [0.2, 0.45, 0.7]
+            });
+
+            sections.forEach((section) => navObserver.observe(section));
+
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                rootMargin: '0px 0px -12% 0px',
+                threshold: 0.12
+            });
+
+            revealTargets.forEach((target) => revealObserver.observe(target));
+        })();
+    </script>
 </body>
 </html>
