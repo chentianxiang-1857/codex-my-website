@@ -56,10 +56,26 @@ body {
     box-shadow: 0 12px 30px rgba(215, 25, 32, 0.24);
 }
 
+.btn-wechat {
+    background: var(--brand-paper);
+    color: var(--ink-900);
+    border-color: var(--brand-paper);
+}
+
+.btn-wechat:hover {
+    background: #fff;
+    color: var(--ink-900);
+    border-color: #fff;
+}
+
+.contact-cta {
+    flex-wrap: wrap;
+}
+
 .works-section,
 .trust-strip,
 .services,
-.cases {
+cases {
     background: var(--brand-paper);
 }
 
