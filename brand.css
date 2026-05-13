@@ -1,0 +1,234 @@
+:root {
+    --brand-red: #D71920;
+    --brand-red-dark: #A90F14;
+    --brand-clay: #B86A4A;
+    --brand-paper: #F7F3EA;
+    --brand-mist: #ECE7DC;
+    --brand-stone: #CFC8BA;
+    --brand-gray: #6F6A61;
+    --brand-silver: #DED8CC;
+    --ink: #0B0B0D;
+    --paper: #FFFFFF;
+    --accent-primary: var(--brand-red);
+    --accent-secondary: var(--brand-clay);
+    --accent-lime: var(--brand-red);
+}
+
+body {
+    background: var(--brand-paper);
+}
+
+.nav-capsule {
+    background: rgba(247, 243, 234, 0.88);
+    border-color: rgba(11, 11, 13, 0.06);
+}
+
+.nav-capsule:hover {
+    background: rgba(247, 243, 234, 0.94);
+}
+
+.nav-links a:hover,
+.nav-links a.is-active {
+    background: var(--ink-900);
+}
+
+.btn {
+    background: var(--ink-900);
+    border-color: var(--ink-900);
+}
+
+.btn:hover {
+    background: var(--brand-paper);
+    color: var(--ink-900);
+}
+
+.btn-accent {
+    background: var(--brand-red);
+    color: #fff;
+    border-color: var(--brand-red);
+    box-shadow: 0 8px 24px rgba(215, 25, 32, 0.18);
+}
+
+.btn-accent:hover {
+    background: var(--brand-red-dark);
+    color: #fff;
+    border-color: var(--brand-red-dark);
+    box-shadow: 0 12px 30px rgba(215, 25, 32, 0.24);
+}
+
+.btn-wechat {
+    background: var(--brand-paper);
+    color: var(--ink-900);
+    border-color: var(--brand-paper);
+}
+
+.btn-wechat:hover {
+    background: #fff;
+    color: var(--ink-900);
+    border-color: #fff;
+}
+
+.contact-cta {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-cta .btn {
+    min-width: 184px;
+    padding: 1rem 2.2rem;
+    border-radius: 2px;
+    text-align: center;
+    box-shadow: none;
+}
+
+.contact-cta .btn-accent {
+    box-shadow: 0 10px 28px rgba(215, 25, 32, 0.2);
+}
+
+.contact-cta .btn-wechat {
+    border-color: var(--brand-paper);
+}
+
+.contact-cta .btn-ghost {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.86);
+    border-color: rgba(247, 243, 234, 0.52);
+}
+
+.contact-cta .btn-ghost:hover {
+    background: var(--brand-paper);
+    color: var(--ink-900);
+    border-color: var(--brand-paper);
+}
+
+.contact-channels {
+    --contact-line: rgba(255, 255, 255, 0.16);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top-color: var(--contact-line);
+    border-bottom-color: var(--contact-line);
+}
+
+.contact-channel {
+    border-color: var(--contact-line);
+}
+
+.contact-channel + .contact-channel {
+    border-left: 0;
+}
+
+.contact-channel:nth-child(2) {
+    border-left: 1px solid var(--contact-line);
+}
+
+.contact-channel:nth-child(3) {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--contact-line);
+}
+
+.works-section,
+.trust-strip,
+.services,
+.cases {
+    background: var(--brand-paper);
+}
+
+.section-alt,
+.plans {
+    background: var(--brand-mist);
+}
+
+.work-image {
+    background: var(--brand-mist);
+}
+
+.trust-strip {
+    border-bottom-color: rgba(11, 11, 13, 0.06);
+}
+
+.trust-item {
+    color: rgba(11, 11, 13, 0.58);
+}
+
+.trust-dot {
+    background: var(--brand-stone);
+}
+
+.problem-card::after,
+.method-step::after,
+.plan-card::after {
+    background: var(--accent-secondary);
+}
+
+.problem-num,
+.step-num {
+    color: var(--brand-stone);
+}
+
+.service-grid,
+.plan-grid {
+    background: rgba(11, 11, 13, 0.09);
+    border-color: rgba(11, 11, 13, 0.09);
+}
+
+.service-card:hover {
+    background: #FBF8F1;
+}
+
+.case-actions {
+    margin-top: 2rem;
+}
+
+.case-visual-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.case-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.case-title a:visited,
+.case-title a:focus {
+    color: inherit;
+}
+
+.case-title a:hover {
+    color: var(--brand-red);
+}
+
+.case-more-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 152px;
+    padding: 0.85rem 1.4rem;
+    border: 1px solid rgba(11, 11, 13, 0.16);
+    color: var(--ink-900);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 1.2px;
+    transition: all 0.35s ease;
+}
+
+.case-more-link:hover {
+    border-color: var(--brand-red);
+    background: var(--brand-red);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .contact-channels {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-channel:nth-child(2) {
+        border-left: 0;
+        border-top: 1px solid var(--contact-line);
+    }
+}
