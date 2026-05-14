@@ -340,6 +340,14 @@ body {
             inset 0 1px 0 rgba(255, 255, 255, 0.7);
     }
 
+    .nav-links a:hover,
+    .nav-links a.is-active {
+        background: transparent;
+        color: #000;
+        box-shadow: none;
+        transform: none;
+    }
+
     .contact-channels {
         grid-template-columns: 1fr;
     }
