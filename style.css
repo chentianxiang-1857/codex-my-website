@@ -435,6 +435,12 @@ section {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
+button.btn {
+    appearance: none;
+    cursor: pointer;
+    font: inherit;
+}
+
 .btn:hover {
     background: var(--brand-paper);
     color: var(--ink-900);
@@ -825,6 +831,8 @@ section {
     object-fit: cover;
     object-position: center 15%;
     display: block;
+    transform-origin: 58% 42%;
+    will-change: transform;
 }
 
 .hero-overlay-dark {
@@ -844,12 +852,12 @@ section {
     min-height: 100vh;
     min-height: 100svh;
     display: flex;
-    align-items: center;
-    padding: 8rem 40px 4rem;
+    align-items: flex-start;
+    padding: clamp(9rem, 17vh, 12rem) 40px 4rem;
 }
 
 .hero-content-wrapper {
-    max-width: 760px;
+    max-width: 620px;
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
@@ -867,24 +875,16 @@ section {
     font-weight: 400;
 }
 
-.hero-brand-logo {
-    height: clamp(82px, 10vw, 126px);
-    width: auto;
-    display: block;
-    margin-bottom: 1.5rem;
-    max-width: 100%;
-}
-
 .reg {
     font-size: 0.65em;
     vertical-align: super;
 }
 
 .hero-h1 {
-    font-size: clamp(2.05rem, 3.3vw, 2.7rem);
+    font-size: clamp(2.55rem, 4.05vw, 3.55rem);
     font-weight: 200;
     letter-spacing: 0;
-    line-height: 1.32;
+    line-height: 1.16;
     margin-bottom: 1.75rem;
     color: #fff;
 }
@@ -909,6 +909,79 @@ section {
     letter-spacing: 4px;
     color: var(--text-faint);
     margin: 0;
+}
+
+.hero .btn {
+    transition: background 0.45s cubic-bezier(0.19, 1, 0.22, 1),
+                color 0.45s cubic-bezier(0.19, 1, 0.22, 1),
+                border-color 0.45s cubic-bezier(0.19, 1, 0.22, 1),
+                box-shadow 0.45s cubic-bezier(0.19, 1, 0.22, 1),
+                transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.hero .btn:hover {
+    transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .hero-bg img {
+        animation: hero-image-arrive 2.2s cubic-bezier(0.19, 1, 0.22, 1) both;
+    }
+
+    .hero-content-wrapper > * {
+        opacity: 0;
+        transform: translateY(28px) scale(0.985);
+        animation: hero-copy-arrive 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
+        will-change: transform, opacity;
+    }
+
+    .hero-h1 {
+        animation-delay: 0.32s;
+    }
+
+    .hero-lead {
+        animation-delay: 0.62s;
+    }
+
+    .hero-cta {
+        animation-delay: 0.9s;
+    }
+
+    .hero-tagline {
+        animation-delay: 1.14s;
+    }
+}
+
+@keyframes hero-image-arrive {
+    from {
+        transform: scale(1.035);
+        filter: brightness(0.82) saturate(0.92);
+    }
+
+    to {
+        transform: scale(1);
+        filter: brightness(1) saturate(1);
+    }
+}
+
+@keyframes hero-copy-arrive {
+    0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.985);
+        filter: blur(6px);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translateY(-2px) scale(1.006);
+        filter: blur(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
 }
 
 .hero-visual {
@@ -1262,13 +1335,16 @@ section {
     overflow: hidden;
     transition: background 0.45s cubic-bezier(0.19, 1, 0.22, 1),
                 border-color 0.45s cubic-bezier(0.19, 1, 0.22, 1),
+                box-shadow 0.45s cubic-bezier(0.19, 1, 0.22, 1),
                 transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
+    will-change: transform;
 }
 
 .method-step:hover {
     background: rgba(255,255,255,.06);
-    border-color: rgba(255,255,255,.18);
-    transform: translateY(-8px);
+    border-color: rgba(255,255,255,.24);
+    box-shadow: 0 24px 54px rgba(0, 0, 0, 0.28);
+    transform: translateY(-10px) scale(1.045);
 }
 
 .step-num {
@@ -2005,6 +2081,15 @@ a.channel-value:hover {
     flex-wrap: wrap;
 }
 
+.wechat-copy-hint {
+    min-height: 1.4rem;
+    margin: -2.4rem auto 2rem;
+    color: rgba(255, 255, 255, 0.44);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
 /* ========================================
    响应式 - 新增部分
    ======================================== */
@@ -2058,11 +2143,7 @@ a.channel-value:hover {
     }
 
     .hero-inner {
-        padding-top: 7rem;
-    }
-
-    .hero-brand-logo {
-        height: clamp(78px, 18vw, 118px);
+        padding-top: 8rem;
     }
 
     .method-flow {
@@ -2098,7 +2179,7 @@ a.channel-value:hover {
     }
 
     .hero-h1 {
-        font-size: 2.05rem;
+        font-size: 2.35rem;
     }
 
     .section-h2 {
@@ -2164,12 +2245,8 @@ a.channel-value:hover {
         max-width: 100%;
     }
 
-    .hero-brand-logo {
-        height: 78px;
-    }
-
     .hero-h1 {
-        font-size: 1.65rem;
+        font-size: 1.95rem;
         letter-spacing: -0.5px;
     }
 

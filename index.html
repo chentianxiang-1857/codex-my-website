@@ -33,8 +33,7 @@
         <div class="hero-overlay-dark"></div>
         <div class="container hero-inner">
             <div class="hero-content-wrapper">
-                <img src="images/logo-light-trim.png" alt="方法想象 Method Imagination" class="hero-brand-logo">
-                <h1 class="hero-h1">用品牌判断与AI设计工作流，<br>重建企业的视觉增长系统</h1>
+                <h1 class="hero-h1">用品牌判断<br>与AI设计工作流，<br>重建企业的视觉增长系统</h1>
                 <p class="hero-lead">方法想象® 是由前阿里巴巴 / 蚂蚁集团高级创意设计专家陈天翔发起的品牌视觉与AI设计顾问实践，专注品牌诊断、视觉系统、包装设计、商业物料与AI辅助创意流程建设。</p>
                 <div class="hero-cta">
                     <a href="#cases" class="btn btn-accent">查看项目实践</a>
@@ -369,9 +368,10 @@
                 <p class="contact-sub">适合在品牌定位、视觉系统、包装与传播物料、AI设计流程建设等关键节点，先用一次清晰的诊断把问题说透。</p>
                 <div class="contact-cta">
                     <a href="mailto:childe-chan@qq.com" class="btn btn-accent">预约沟通</a>
-                    <a href="weixin://" class="btn btn-wechat">添加微信咨询</a>
+                    <button type="button" class="btn btn-wechat" data-wechat-id="175539951">添加微信咨询</button>
                     <a href="#services" class="btn btn-ghost">查看服务方案</a>
                 </div>
+                <p class="wechat-copy-hint" aria-live="polite"></p>
                 <div class="contact-channels">
                     <div class="contact-channel">
                         <p class="channel-label">Email</p>
@@ -439,6 +439,56 @@
             });
 
             revealTargets.forEach((target) => revealObserver.observe(target));
+
+            const wechatButton = document.querySelector('[data-wechat-id]');
+            const wechatHint = document.querySelector('.wechat-copy-hint');
+
+            if (wechatButton) {
+                const defaultLabel = wechatButton.textContent;
+                const wechatId = wechatButton.dataset.wechatId;
+
+                const copyWechatId = async () => {
+                    try {
+                        await navigator.clipboard.writeText(wechatId);
+                        return true;
+                    } catch (error) {
+                        const input = document.createElement('textarea');
+                        input.value = wechatId;
+                        input.setAttribute('readonly', '');
+                        input.style.position = 'fixed';
+                        input.style.opacity = '0';
+                        document.body.appendChild(input);
+                        input.select();
+
+                        try {
+                            return document.execCommand('copy');
+                        } catch (fallbackError) {
+                            return false;
+                        } finally {
+                            input.remove();
+                        }
+                    }
+                };
+
+                wechatButton.addEventListener('click', async () => {
+                    const copied = await copyWechatId();
+                    wechatButton.textContent = copied ? '微信号已复制' : `微信号 ${wechatId}`;
+
+                    if (wechatHint) {
+                        wechatHint.textContent = copied
+                            ? `已复制微信号 ${wechatId}，请在微信中搜索添加。`
+                            : `请在微信中搜索 ${wechatId} 添加。`;
+                    }
+
+                    window.setTimeout(() => {
+                        window.location.href = 'weixin://';
+                    }, 220);
+
+                    window.setTimeout(() => {
+                        wechatButton.textContent = defaultLabel;
+                    }, 3200);
+                });
+            }
         })();
     </script>
 </body>
