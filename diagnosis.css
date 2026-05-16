@@ -1,0 +1,501 @@
+.diagnosis-body {
+    background: var(--brand-paper);
+}
+
+.diagnosis-back-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 54px;
+    padding: 0 0.55rem 0 0.2rem;
+    color: var(--ink-900);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.diagnosis-back-link::before {
+    content: '<';
+    margin-right: 0.45rem;
+    color: var(--brand-red);
+}
+
+.diagnosis-back-link:hover {
+    color: var(--brand-red);
+}
+
+.diagnosis-hero {
+    min-height: 82vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 9.2rem 0 5.8rem;
+    background:
+        linear-gradient(90deg, rgba(11, 11, 13, 0.96) 0%, rgba(11, 11, 13, 0.82) 45%, rgba(11, 11, 13, 0.52) 100%),
+        linear-gradient(180deg, rgba(11, 11, 13, 0.05), rgba(11, 11, 13, 0.54)),
+        url("images/optimized/profile-hero.jpg") center 26% / cover;
+    color: #fff;
+}
+
+.diagnosis-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.62fr);
+    gap: 5rem;
+    align-items: end;
+}
+
+.diagnosis-kicker,
+.diagnosis-section-kicker {
+    margin-bottom: 1.2rem;
+    color: var(--brand-red);
+    font-size: 0.78rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.diagnosis-title {
+    max-width: 760px;
+    margin: 0 0 1.5rem;
+    font-size: clamp(3.2rem, 6.2vw, 6rem);
+    line-height: 1.03;
+    font-weight: 200;
+    letter-spacing: 0;
+}
+
+.diagnosis-lead {
+    max-width: 690px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 1.02rem;
+    line-height: 1.9;
+}
+
+.diagnosis-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2.2rem;
+}
+
+.diagnosis-hero-actions .btn {
+    min-width: 152px;
+    border-radius: 2px;
+    box-shadow: 0 14px 36px rgba(215, 25, 32, 0.22);
+}
+
+.diagnosis-hero-link {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 0.86rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.diagnosis-hero-link:hover {
+    color: #fff;
+}
+
+.diagnosis-hero-note {
+    max-width: 360px;
+    padding: 1.25rem 0 1.25rem 1.4rem;
+    border-left: 2px solid var(--brand-red);
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.94rem;
+    line-height: 1.9;
+}
+
+.diagnosis-flow {
+    background: var(--ink-900);
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.diagnosis-flow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.diagnosis-flow-item {
+    min-height: 168px;
+    padding: 1.85rem 1.5rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.diagnosis-flow-item span {
+    display: block;
+    margin-bottom: 2.1rem;
+    color: rgba(255, 255, 255, 0.38);
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+}
+
+.diagnosis-flow-item h2 {
+    margin: 0 0 0.8rem;
+    font-size: 1.28rem;
+    font-weight: 300;
+}
+
+.diagnosis-flow-item p {
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.diagnosis-form-section {
+    padding: 7.2rem 0;
+    background:
+        linear-gradient(180deg, rgba(236, 231, 220, 0.58), rgba(247, 243, 234, 0) 18rem),
+        var(--brand-paper);
+}
+
+.diagnosis-form-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+    gap: 4.8rem;
+    align-items: start;
+}
+
+.diagnosis-sticky {
+    position: sticky;
+    top: 8rem;
+}
+
+.diagnosis-form-title {
+    margin: 0 0 1.2rem;
+    font-size: clamp(2rem, 4vw, 3.8rem);
+    line-height: 1.08;
+    font-weight: 250;
+    letter-spacing: 0;
+}
+
+.diagnosis-form-copy {
+    color: rgba(11, 11, 13, 0.62);
+    line-height: 1.9;
+}
+
+.diagnosis-mini-list {
+    display: grid;
+    gap: 0;
+    margin-top: 2.4rem;
+    color: rgba(11, 11, 13, 0.68);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(11, 11, 13, 0.1);
+}
+
+.diagnosis-mini-list p {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(11, 11, 13, 0.1);
+}
+
+.diagnosis-form {
+    display: grid;
+    gap: 1.15rem;
+    counter-reset: diagnosis-panel;
+}
+
+.diagnosis-panel {
+    position: relative;
+    counter-increment: diagnosis-panel;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.68);
+    border: 1px solid rgba(11, 11, 13, 0.075);
+    border-radius: 6px;
+    padding: 2.25rem 2.2rem 2.25rem 4.4rem;
+    box-shadow: 0 18px 50px rgba(11, 11, 13, 0.035);
+}
+
+.diagnosis-panel legend,
+.diagnosis-panel-title {
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0;
+    position: static;
+    margin: 0 0 1.45rem;
+    color: var(--ink-900);
+    font-size: 1.02rem;
+    font-weight: 450;
+    letter-spacing: 0.02em;
+}
+
+.diagnosis-panel legend + * {
+    clear: both;
+}
+
+.diagnosis-panel legend::before {
+    content: counter(diagnosis-panel, decimal-leading-zero);
+    position: absolute;
+    left: 2.15rem;
+    top: 2.36rem;
+    color: var(--brand-red);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    font-weight: 500;
+}
+
+.diagnosis-field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.05rem 1rem;
+}
+
+.diagnosis-field,
+.diagnosis-choice {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.diagnosis-field-wide {
+    margin-top: 1rem;
+}
+
+.diagnosis-field label,
+.diagnosis-choice-title {
+    color: rgba(11, 11, 13, 0.62);
+    font-size: 0.78rem;
+    letter-spacing: 0.8px;
+}
+
+.diagnosis-field input,
+.diagnosis-field select,
+.diagnosis-field textarea {
+    width: 100%;
+    border: 1px solid rgba(11, 11, 13, 0.12);
+    background: rgba(247, 243, 234, 0.62);
+    color: var(--ink-900);
+    padding: 0.92rem 1rem;
+    font: inherit;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.diagnosis-field textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.diagnosis-field input:focus,
+.diagnosis-field select:focus,
+.diagnosis-field textarea:focus {
+    border-color: var(--brand-red);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(215, 25, 32, 0.08);
+}
+
+.diagnosis-check-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.72rem;
+}
+
+.diagnosis-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    min-height: 4.6rem;
+    padding: 0.9rem 0.95rem;
+    background: rgba(247, 243, 234, 0.62);
+    border: 1px solid rgba(11, 11, 13, 0.07);
+    border-radius: 4px;
+    color: rgba(11, 11, 13, 0.78);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.diagnosis-check:hover {
+    border-color: rgba(215, 25, 32, 0.28);
+    background: rgba(255, 255, 255, 0.82);
+}
+
+.diagnosis-check:has(input:checked) {
+    border-color: rgba(215, 25, 32, 0.55);
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.diagnosis-check input {
+    width: 0.95rem;
+    height: 0.95rem;
+    margin-top: 0.2rem;
+    accent-color: var(--brand-red);
+    flex: 0 0 auto;
+}
+
+.diagnosis-choice-spaced {
+    margin: 1.2rem 0 0.7rem;
+}
+
+.diagnosis-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+    padding-left: 4.4rem;
+}
+
+.diagnosis-result {
+    display: none;
+    padding: 5rem 0 7rem;
+    background: var(--ink-900);
+    color: #fff;
+}
+
+.diagnosis-result.is-visible {
+    display: block;
+}
+
+.diagnosis-result-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+    gap: 3rem;
+}
+
+.diagnosis-result-label {
+    color: var(--brand-red);
+    font-size: 0.82rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.diagnosis-result-stage {
+    margin: 1rem 0;
+    font-size: clamp(2.3rem, 5vw, 5.2rem);
+    line-height: 0.98;
+    font-weight: 220;
+    letter-spacing: 0;
+}
+
+.diagnosis-score-board {
+    display: grid;
+    gap: 0.7rem;
+    margin-top: 2.4rem;
+}
+
+.diagnosis-score-row {
+    display: grid;
+    grid-template-columns: 5.8rem 1fr 2rem;
+    gap: 1rem;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.86rem;
+}
+
+.diagnosis-score-bar {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.16);
+    position: relative;
+    overflow: hidden;
+}
+
+.diagnosis-score-bar span {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0;
+    background: var(--brand-red);
+}
+
+.diagnosis-result-copy {
+    display: grid;
+    gap: 1.4rem;
+}
+
+.diagnosis-result-copy h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 350;
+}
+
+.diagnosis-result-copy p,
+.diagnosis-result-copy li {
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.9;
+}
+
+.diagnosis-result-copy ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.diagnosis-result-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.diagnosis-result-actions .btn-ghost {
+    border-color: rgba(255, 255, 255, 0.32);
+    color: #fff;
+}
+
+@media (max-width: 968px) {
+    .diagnosis-hero-grid,
+    .diagnosis-form-layout,
+    .diagnosis-result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diagnosis-sticky {
+        position: static;
+    }
+
+    .diagnosis-flow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .diagnosis-actions {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .diagnosis-back-link {
+        display: none;
+    }
+
+    .diagnosis-hero {
+        min-height: auto;
+        padding: 8rem 0 4.4rem;
+    }
+
+    .diagnosis-hero-grid {
+        gap: 2.4rem;
+    }
+
+    .diagnosis-title {
+        font-size: 3rem;
+    }
+
+    .diagnosis-hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .diagnosis-flow-grid,
+    .diagnosis-field-grid,
+    .diagnosis-check-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .diagnosis-form-section,
+    .diagnosis-result {
+        padding: 4.5rem 0;
+    }
+
+    .diagnosis-panel {
+        padding: 1.45rem;
+    }
+
+    .diagnosis-panel legend::before {
+        position: static;
+        display: block;
+        margin-bottom: 0.55rem;
+    }
+
+    .diagnosis-check {
+        min-height: auto;
+    }
+}

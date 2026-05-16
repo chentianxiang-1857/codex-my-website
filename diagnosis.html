@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="方法想象® 品牌关系链路预诊表单，帮助企业判断品牌问题卡在认知入口、兴趣承接、信任转化还是资产沉淀。">
+    <title>品牌预诊 | 方法想象® · 陈天翔</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="brand.css">
+    <link rel="stylesheet" href="diagnosis.css">
+</head>
+<body class="diagnosis-body">
+    <nav class="navbar">
+        <div class="nav-capsule">
+            <a href="index.html#hero" class="nav-logo" aria-label="返回首页">
+                <img src="images/logo-light-trim.png" alt="方法想象">
+            </a>
+            <a href="index.html#hero" class="diagnosis-back-link">返回首页</a>
+            <ul class="nav-links">
+                <li><a href="index.html#method">方法</a></li>
+                <li><a href="index.html#cases">项目实践</a></li>
+                <li><a href="index.html#services">服务</a></li>
+                <li><a href="diagnosis.html" class="is-active">预诊</a></li>
+                <li><a href="index.html#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="diagnosis-hero">
+            <div class="container diagnosis-hero-grid">
+                <div>
+                    <p class="diagnosis-kicker">Brand Pre-Diagnosis</p>
+                    <h1 class="diagnosis-title">先判断品牌卡在哪一段。</h1>
+                    <p class="diagnosis-lead">这是一份基于品牌关系链路的预诊表单。它不直接照搬电商 AIPL，而是把消费者全链路转译为认知入口、兴趣承接、信任转化和资产沉淀，帮助你先看清品牌问题的主次。</p>
+                    <div class="diagnosis-hero-actions">
+                        <a href="#diagnosis-form" class="btn btn-accent">开始填写</a>
+                        <a href="index.html#contact" class="diagnosis-hero-link">联系咨询</a>
+                    </div>
+                </div>
+                <p class="diagnosis-hero-note">预诊结果只用于初步判断，不替代完整品牌咨询。真正的诊断，需要结合产品、渠道、视觉资料和商业目标继续展开。</p>
+            </div>
+        </section>
+
+        <section class="diagnosis-flow" aria-label="品牌关系链路">
+            <div class="container">
+                <div class="diagnosis-flow-grid">
+                    <div class="diagnosis-flow-item">
+                        <span>01 / Awareness</span>
+                        <h2>认知入口</h2>
+                        <p>用户能不能快速理解你是谁、提供什么、为什么值得被记住。</p>
+                    </div>
+                    <div class="diagnosis-flow-item">
+                        <span>02 / Interest</span>
+                        <h2>兴趣承接</h2>
+                        <p>用户看见之后，是否有继续了解的理由和清晰的信息路径。</p>
+                    </div>
+                    <div class="diagnosis-flow-item">
+                        <span>03 / Purchase</span>
+                        <h2>信任转化</h2>
+                        <p>用户有兴趣之后，购买理由、信任证据和价值感是否足够清楚。</p>
+                    </div>
+                    <div class="diagnosis-flow-item">
+                        <span>04 / Loyalty</span>
+                        <h2>资产沉淀</h2>
+                        <p>购买或合作之后，品牌是否形成复购、口碑、标准和长期资产。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diagnosis-form" class="diagnosis-form-section">
+            <div class="container diagnosis-form-layout">
+                <aside class="diagnosis-sticky">
+                    <p class="diagnosis-section-kicker">Start Here</p>
+                    <h2 class="diagnosis-form-title">填写现状，生成一份轻量预诊。</h2>
+                    <p class="diagnosis-form-copy">请选择最接近真实情况的选项。系统会根据四段链路的得分，判断当前品牌更像卡在认知、兴趣、转化还是资产沉淀。</p>
+                    <div class="diagnosis-mini-list">
+                        <p>不是为了马上给出设计答案，而是先判断问题到底是什么。</p>
+                        <p>如果四段问题都很高，更适合先做品牌诊断会，而不是直接进入单点设计。</p>
+                    </div>
+                </aside>
+
+                <form id="diagnosisForm" class="diagnosis-form">
+                    <fieldset class="diagnosis-panel">
+                        <legend>基础信息</legend>
+                        <div class="diagnosis-field-grid">
+                            <div class="diagnosis-field">
+                                <label for="brandName">品牌 / 项目名称</label>
+                                <input id="brandName" name="brandName" type="text" placeholder="例如：某农产品品牌">
+                            </div>
+                            <div class="diagnosis-field">
+                                <label for="industry">所在行业</label>
+                                <input id="industry" name="industry" type="text" placeholder="例如：食品、文旅、科技硬件">
+                            </div>
+                            <div class="diagnosis-field">
+                                <label for="stage">当前阶段</label>
+                                <select id="stage" name="stage">
+                                    <option value="">请选择</option>
+                                    <option>初创期</option>
+                                    <option>转型期</option>
+                                    <option>增长期</option>
+                                    <option>成熟期</option>
+                                    <option>区域公共品牌 / 政府项目</option>
+                                </select>
+                            </div>
+                            <div class="diagnosis-field">
+                                <label for="budget">预算范围</label>
+                                <select id="budget" name="budget">
+                                    <option value="">请选择</option>
+                                    <option value="under1">1 万以内</option>
+                                    <option value="1to3">1-3 万</option>
+                                    <option value="3to8">3-8 万</option>
+                                    <option value="8to20">8-20 万</option>
+                                    <option value="over20">20 万以上</option>
+                                    <option value="unknown">暂不确定</option>
+                                </select>
+                            </div>
+                            <div class="diagnosis-field">
+                                <label for="goal">这次最想解决什么</label>
+                                <select id="goal" name="goal">
+                                    <option value="">请选择</option>
+                                    <option value="awareness">让更多人知道我们是谁</option>
+                                    <option value="interest">让看过的人更愿意了解我们</option>
+                                    <option value="purchase">让有兴趣的人更愿意购买或合作</option>
+                                    <option value="loyalty">让买过的人复购、推荐或形成口碑</option>
+                                    <option value="unknown">我不确定，需要先诊断</option>
+                                </select>
+                            </div>
+                            <div class="diagnosis-field">
+                                <label for="timeline">期望启动时间</label>
+                                <select id="timeline" name="timeline">
+                                    <option value="">请选择</option>
+                                    <option>立即</option>
+                                    <option>1 个月内</option>
+                                    <option>1-3 个月</option>
+                                    <option>3 个月后</option>
+                                    <option>只是先了解</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="diagnosis-field diagnosis-field-wide">
+                            <label for="context">简单描述品牌现状</label>
+                            <textarea id="context" name="context" placeholder="可以写当前产品、渠道、视觉资料、最卡的地方，或贴官网/店铺/公众号链接。"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="diagnosis-panel">
+                        <legend>认知入口自检</legend>
+                        <div class="diagnosis-check-grid">
+                            <label class="diagnosis-check"><input type="checkbox" name="awareness">目标客户很难一句话理解我们是谁</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="awareness">品牌名、品类和业务关系不够清楚</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="awareness">有产品，但缺少清晰品牌入口</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="awareness">视觉识别弱，别人记不住</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="awareness">不知道该主打哪个核心卖点</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="awareness">传播时每次说法都不一样</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="diagnosis-panel">
+                        <legend>兴趣承接自检</legend>
+                        <div class="diagnosis-check-grid">
+                            <label class="diagnosis-check"><input type="checkbox" name="interest">有曝光，但咨询少</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="interest">用户看过内容，但停留时间不长</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="interest">官网 / 详情页 / 公众号信息很多，但主次不清</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="interest">产品卖点很多，但不知道先讲什么</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="interest">内容风格有，但没有形成稳定叙事</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="interest">用户看完之后不知道下一步该做什么</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="diagnosis-panel">
+                        <legend>信任转化自检</legend>
+                        <div class="diagnosis-check-grid">
+                            <label class="diagnosis-check"><input type="checkbox" name="purchase">用户常问价格，但不理解价值</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="purchase">包装或详情页无法支撑溢价</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="purchase">招商或销售材料讲不清合作理由</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="purchase">用户有兴趣，但转化周期长</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="purchase">产品很好，但信任证据不足</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="purchase">竞品一打价格，我们就很被动</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="diagnosis-panel">
+                        <legend>资产沉淀自检</legend>
+                        <div class="diagnosis-check-grid">
+                            <label class="diagnosis-check"><input type="checkbox" name="loyalty">有客户，但复购弱</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="loyalty">用户买过，但很少主动分享</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="loyalty">产品线越来越多，品牌越来越乱</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="loyalty">每次活动和物料都像重新开始</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="loyalty">内部团队没有统一视觉标准</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="loyalty">品牌资产没有沉淀成可复用系统</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="diagnosis-panel">
+                        <legend>项目边界</legend>
+                        <div class="diagnosis-field-grid">
+                            <div class="diagnosis-field">
+                                <label for="asset">现有品牌资产</label>
+                                <select id="asset" name="asset">
+                                    <option value="">请选择</option>
+                                    <option>有，且正在使用</option>
+                                    <option>有，但不好用</option>
+                                    <option>没有</option>
+                                    <option>不确定</option>
+                                </select>
+                            </div>
+                            <div class="diagnosis-field">
+                                <label for="channel">主要渠道</label>
+                                <select id="channel" name="channel">
+                                    <option value="">请选择</option>
+                                    <option>线上电商</option>
+                                    <option>线下渠道</option>
+                                    <option>私域 / 社群</option>
+                                    <option>招商 / 经销</option>
+                                    <option>政府 / B 端合作</option>
+                                    <option>暂无稳定渠道</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p class="diagnosis-choice-title diagnosis-choice-spaced">是否涉及第三方执行</p>
+                        <div class="diagnosis-check-grid">
+                            <label class="diagnosis-check"><input type="checkbox" name="thirdParty">包装打样 / 印刷</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="thirdParty">摄影</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="thirdParty">视频</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="thirdParty">空间</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="thirdParty">小程序 / 网站开发</label>
+                            <label class="diagnosis-check"><input type="checkbox" name="thirdParty">暂无</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="diagnosis-actions">
+                        <button type="submit" class="btn btn-accent">生成预诊结果</button>
+                        <button type="reset" class="btn">重新填写</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="diagnosisResult" class="diagnosis-result" aria-live="polite">
+            <div class="container diagnosis-result-grid">
+                <div>
+                    <p class="diagnosis-result-label">Pre-Diagnosis Result</p>
+                    <h2 id="resultStage" class="diagnosis-result-stage">认知入口</h2>
+                    <p id="resultBudget" class="diagnosis-hero-note"></p>
+                    <div id="scoreBoard" class="diagnosis-score-board"></div>
+                </div>
+                <div class="diagnosis-result-copy">
+                    <h3 id="resultHeadline"></h3>
+                    <p id="resultDiagnosis"></p>
+                    <div>
+                        <h3>初步建议</h3>
+                        <ul id="resultSuggestions"></ul>
+                    </div>
+                    <p id="resultNext"></p>
+                    <div class="diagnosis-result-actions">
+                        <a id="mailResult" href="mailto:childe-chan@qq.com" class="btn btn-accent">把结果发到邮箱</a>
+                        <button type="button" class="btn btn-ghost" data-copy-result>复制预诊摘要</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 方法想象®. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script>
+        (() => {
+            const form = document.querySelector('#diagnosisForm');
+            const result = document.querySelector('#diagnosisResult');
+            const copyButton = document.querySelector('[data-copy-result]');
+            let lastSummary = '';
+
+            const stageMeta = {
+                awareness: {
+                    label: '认知入口',
+                    headline: '你现在更像是卡在认知入口。',
+                    diagnosis: '用户不是不喜欢你，而是还没有快速理解你是谁、提供什么、为什么值得被记住。这个阶段的重点，不是先加大传播，而是把品牌入口、核心卖点和视觉记忆点理清楚。',
+                    suggestions: ['优先做品牌诊断与定位梳理。', '梳理一句话表达、品类入口和核心卖点。', '可进一步做品牌视觉方向定义或轻量化视觉系统。']
+                },
+                interest: {
+                    label: '兴趣承接',
+                    headline: '你现在更像是卡在兴趣承接。',
+                    diagnosis: '用户可能已经看到了你，但信息主次、卖点结构和表达路径还没有形成秩序。表面看是内容或页面问题，底层往往是信息没有被重新排序。',
+                    suggestions: ['优先做信息秩序诊断。', '梳理官网、详情页、公众号或招商资料的叙事结构。', '可进一步做传播物料系统或产品上市视觉。']
+                },
+                purchase: {
+                    label: '信任转化',
+                    headline: '你现在更像是卡在信任转化。',
+                    diagnosis: '用户有兴趣，但购买理由、信任证据和价值感还没有被清楚表达。这个阶段最怕只做表面美化，因为包装、详情页和销售材料必须共同回答“为什么值得买”。',
+                    suggestions: ['建议先做品牌诊断会，明确购买理由和信任证据。', '可进一步做包装系统、详情页结构或招商手册。', '如果是单款产品上市，可评估产品上市视觉专项。']
+                },
+                loyalty: {
+                    label: '资产沉淀',
+                    headline: '你现在更像是卡在资产沉淀。',
+                    diagnosis: '品牌已经有一定基础，但复购、分享、团队执行和视觉系统还没有沉淀成稳定资产。问题不再是单次销售，而是长期品牌资产没有被管理。',
+                    suggestions: ['适合长期品牌视觉顾问或阶段性品牌治理。', '建立视觉系统、应用规范和产品线管理规则。', '如果内容需求密集，可同步建设 AI 设计工作流。']
+                }
+            };
+
+            const budgetMeta = {
+                under1: '预算在 1 万以内，更适合轻量方向判断或单点咨询，不适合完整品牌系统。',
+                '1to3': '预算在 1-3 万，可以考虑轻量诊断、视觉方向定义、核心 KV 或明确单项设计。',
+                '3to8': '预算在 3-8 万，适合试点型合作、单款产品上市视觉或小范围包装系统。',
+                '8to20': '预算在 8-20 万，适合标准项目制合作，例如品牌诊断、视觉系统、包装体系或商业物料。',
+                over20: '预算在 20 万以上，可以进入年度顾问、区域公共品牌或战略型项目评估。',
+                unknown: '预算暂不确定，建议先明确目标、交付范围和时间节点，再判断合作方式。'
+            };
+
+            const goalWeight = {
+                awareness: 'awareness',
+                interest: 'interest',
+                purchase: 'purchase',
+                loyalty: 'loyalty'
+            };
+
+            const getCheckedCount = (name) => form.querySelectorAll(`input[name="${name}"]:checked`).length;
+
+            const getWinner = (scores) => {
+                const order = ['awareness', 'interest', 'purchase', 'loyalty'];
+                return order.reduce((winner, key) => {
+                    if (scores[key] > scores[winner]) return key;
+                    if (scores[key] === scores[winner] && order.indexOf(key) > order.indexOf(winner)) return key;
+                    return winner;
+                }, 'awareness');
+            };
+
+            const buildScoreBoard = (scores) => {
+                const max = Math.max(6, ...Object.values(scores));
+                return Object.entries(stageMeta).map(([key, meta]) => {
+                    const width = Math.round((scores[key] / max) * 100);
+                    return `
+                        <div class="diagnosis-score-row">
+                            <span>${meta.label}</span>
+                            <div class="diagnosis-score-bar"><span style="width:${width}%"></span></div>
+                            <strong>${scores[key]}</strong>
+                        </div>
+                    `;
+                }).join('');
+            };
+
+            const collectFormText = (data, scores, winner, budgetText, thirdPartyCount) => {
+                const brandName = data.get('brandName') || '未填写';
+                const industry = data.get('industry') || '未填写';
+                const stage = data.get('stage') || '未填写';
+                const budget = form.querySelector('#budget option:checked')?.textContent || '未填写';
+                const timeline = data.get('timeline') || '未填写';
+                const context = data.get('context') || '未填写';
+                const meta = stageMeta[winner];
+                const scoreText = Object.entries(scores)
+                    .map(([key, value]) => `${stageMeta[key].label}：${value}`)
+                    .join(' / ');
+
+                return [
+                    '方法想象品牌预诊摘要',
+                    `品牌 / 项目：${brandName}`,
+                    `行业：${industry}`,
+                    `当前阶段：${stage}`,
+                    `预算范围：${budget}`,
+                    `启动时间：${timeline}`,
+                    `主判断：${meta.label}`,
+                    `四段得分：${scoreText}`,
+                    `预算判断：${budgetText}`,
+                    `第三方执行项数量：${thirdPartyCount}`,
+                    `现状描述：${context}`,
+                    `初步诊断：${meta.diagnosis}`,
+                    `初步建议：${meta.suggestions.join('；')}`
+                ].join('\n');
+            };
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const data = new FormData(form);
+                const scores = {
+                    awareness: getCheckedCount('awareness'),
+                    interest: getCheckedCount('interest'),
+                    purchase: getCheckedCount('purchase'),
+                    loyalty: getCheckedCount('loyalty')
+                };
+                const goal = data.get('goal');
+                if (goalWeight[goal]) {
+                    scores[goalWeight[goal]] += 1;
+                }
+
+                const winner = getWinner(scores);
+                const meta = stageMeta[winner];
+                const budgetText = budgetMeta[data.get('budget')] || '预算尚未填写，建议补充预算范围以便判断合作方式。';
+                const thirdPartyCount = getCheckedCount('thirdParty');
+                const nextText = thirdPartyCount > 0
+                    ? '你填写的项目涉及第三方执行，正式报价前需要进一步确认打样、摄影、视频、空间或开发边界。'
+                    : '下一步建议补充品牌链接、现有视觉资料、产品结构和关键时间节点，再进入人工判断。';
+
+                document.querySelector('#resultStage').textContent = meta.label;
+                document.querySelector('#resultHeadline').textContent = meta.headline;
+                document.querySelector('#resultDiagnosis').textContent = meta.diagnosis;
+                document.querySelector('#resultBudget').textContent = budgetText;
+                document.querySelector('#scoreBoard').innerHTML = buildScoreBoard(scores);
+                document.querySelector('#resultSuggestions').innerHTML = meta.suggestions.map((item) => `<li>${item}</li>`).join('');
+                document.querySelector('#resultNext').textContent = nextText;
+
+                lastSummary = collectFormText(data, scores, winner, budgetText, thirdPartyCount);
+                const mailHref = `mailto:childe-chan@qq.com?subject=${encodeURIComponent('品牌预诊结果')}&body=${encodeURIComponent(lastSummary)}`;
+                document.querySelector('#mailResult').setAttribute('href', mailHref);
+
+                result.classList.add('is-visible');
+                result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+
+            form.addEventListener('reset', () => {
+                result.classList.remove('is-visible');
+                lastSummary = '';
+            });
+
+            copyButton.addEventListener('click', async () => {
+                if (!lastSummary) return;
+                try {
+                    await navigator.clipboard.writeText(lastSummary);
+                    copyButton.textContent = '已复制摘要';
+                    window.setTimeout(() => {
+                        copyButton.textContent = '复制预诊摘要';
+                    }, 2200);
+                } catch (error) {
+                    copyButton.textContent = '复制失败，请手动选择';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -69,14 +69,15 @@ body {
 }
 
 .contact-cta {
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
 }
 
 .contact-cta .btn {
-    min-width: 184px;
-    padding: 1rem 2.2rem;
+    min-width: 220px;
+    padding: 1rem 2.4rem;
     border-radius: 2px;
     text-align: center;
     box-shadow: none;
@@ -100,6 +101,56 @@ body {
     background: var(--brand-paper);
     color: var(--ink-900);
     border-color: var(--brand-paper);
+}
+
+.contact-secondary-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 0.82rem;
+}
+
+.contact-secondary-actions a,
+.contact-secondary-actions button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.25rem 0.9rem;
+    transition: color 0.25s ease;
+}
+
+.contact-secondary-actions a + button,
+.contact-secondary-actions button + a {
+    border-left: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.contact-secondary-actions a:hover,
+.contact-secondary-actions button:hover {
+    color: #fff;
+}
+
+@media (max-width: 560px) {
+    .contact-secondary-actions {
+        flex-direction: column;
+        gap: 0.55rem;
+    }
+
+    .contact-secondary-actions a,
+    .contact-secondary-actions button {
+        padding: 0.2rem 0;
+    }
+
+    .contact-secondary-actions a + button,
+    .contact-secondary-actions button + a {
+        border-left: 0;
+    }
 }
 
 .contact-channels {
