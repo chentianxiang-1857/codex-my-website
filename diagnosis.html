@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="方法想象® 品牌关系链路预诊表单，帮助企业判断品牌问题卡在认知入口、兴趣承接、信任转化还是资产沉淀。">
+    <meta name="description" content="方法想象® 品牌预诊表单，帮助企业先判断品牌问题是出在理解、兴趣、信任还是长期资产。">
     <title>品牌预诊 | 方法想象® · 陈天翔</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="brand.css">
@@ -32,7 +32,7 @@
                 <div>
                     <p class="diagnosis-kicker">Brand Pre-Diagnosis</p>
                     <h1 class="diagnosis-title">先判断品牌卡在哪一段。</h1>
-                    <p class="diagnosis-lead">这是一份基于品牌关系链路的预诊表单。它不直接照搬电商 AIPL，而是把消费者全链路转译为认知入口、兴趣承接、信任转化和资产沉淀，帮助你先看清品牌问题的主次。</p>
+                    <p class="diagnosis-lead">如果你感觉品牌需要升级，但还说不清问题在哪里，可以先用这份表单做一次轻量预诊。它会帮助你判断：现在更需要被看见、被理解、被信任，还是建立更稳定的品牌资产。</p>
                     <div class="diagnosis-hero-actions">
                         <a href="#diagnosis-form" class="btn btn-accent">开始填写</a>
                         <a href="index.html#contact" class="diagnosis-hero-link">联系咨询</a>
@@ -255,7 +255,7 @@
                     </div>
                     <p id="resultNext"></p>
                     <div class="diagnosis-result-actions">
-                        <a id="mailResult" href="mailto:childe-chan@qq.com" class="btn btn-accent">把结果发到邮箱</a>
+                        <button id="mailResult" type="button" class="btn btn-accent">发送预诊结果</button>
                         <button type="button" class="btn btn-ghost" data-copy-result>复制预诊摘要</button>
                     </div>
                 </div>
@@ -274,7 +274,11 @@
             const form = document.querySelector('#diagnosisForm');
             const result = document.querySelector('#diagnosisResult');
             const copyButton = document.querySelector('[data-copy-result]');
+            const mailButton = document.querySelector('#mailResult');
+            const diagnosisApiBase = window.METHOD_IMAGINATION_API_BASE || 'https://api.methodimagination.com';
             let lastSummary = '';
+            let lastMailHref = 'mailto:childe-chan@qq.com';
+            let lastSubmissionPayload = null;
 
             const stageMeta = {
                 awareness: {
@@ -320,6 +324,42 @@
             };
 
             const getCheckedCount = (name) => form.querySelectorAll(`input[name="${name}"]:checked`).length;
+            const getCheckedLabels = (name) => Array.from(form.querySelectorAll(`input[name="${name}"]:checked`))
+                .map((input) => input.closest('label')?.textContent.trim())
+                .filter(Boolean);
+
+            const copyText = async (text) => {
+                if (!text) return false;
+
+                if (navigator.clipboard && window.isSecureContext) {
+                    try {
+                        await navigator.clipboard.writeText(text);
+                        return true;
+                    } catch (error) {
+                        // Fall back to the textarea method below.
+                    }
+                }
+
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.setAttribute('readonly', '');
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                textarea.style.top = '0';
+                document.body.appendChild(textarea);
+                textarea.focus();
+                textarea.select();
+
+                let copied = false;
+                try {
+                    copied = document.execCommand('copy');
+                } catch (error) {
+                    copied = false;
+                }
+
+                document.body.removeChild(textarea);
+                return copied;
+            };
 
             const getWinner = (scores) => {
                 const order = ['awareness', 'interest', 'purchase', 'loyalty'];
@@ -373,6 +413,58 @@
                 ].join('\n');
             };
 
+            const collectSubmissionPayload = (data, scores, winner, budgetText, nextText) => {
+                const meta = stageMeta[winner];
+                const budgetLabel = form.querySelector('#budget option:checked')?.textContent || '';
+                const goalLabel = form.querySelector('#goal option:checked')?.textContent || '';
+                const suggestionsText = meta.suggestions.join('；');
+
+                return {
+                    source: 'website-diagnosis',
+                    submittedAt: new Date().toISOString(),
+                    winner,
+                    scores,
+                    stageLabel: meta.label,
+                    headline: meta.headline,
+                    diagnosis: meta.diagnosis,
+                    budgetText,
+                    suggestionsText,
+                    nextText,
+                    summary: lastSummary,
+                    fields: {
+                        brandName: data.get('brandName') || '',
+                        industry: data.get('industry') || '',
+                        businessStage: data.get('stage') || '',
+                        budgetRange: budgetLabel,
+                        budgetKey: data.get('budget') || '',
+                        timeline: data.get('timeline') || '',
+                        goal: goalLabel,
+                        goalKey: data.get('goal') || '',
+                        context: data.get('context') || '',
+                        asset: data.get('asset') || '',
+                        channel: data.get('channel') || '',
+                        thirdParty: getCheckedLabels('thirdParty')
+                    }
+                };
+            };
+
+            const submitDiagnosisResult = async (payload) => {
+                const endpoint = `${diagnosisApiBase.replace(/\/$/, '')}/diagnosis-submit`;
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Submit failed: ${response.status}`);
+                }
+
+                return response.json();
+            };
+
             form.addEventListener('submit', (event) => {
                 event.preventDefault();
 
@@ -405,8 +497,10 @@
                 document.querySelector('#resultNext').textContent = nextText;
 
                 lastSummary = collectFormText(data, scores, winner, budgetText, thirdPartyCount);
-                const mailHref = `mailto:childe-chan@qq.com?subject=${encodeURIComponent('品牌预诊结果')}&body=${encodeURIComponent(lastSummary)}`;
-                document.querySelector('#mailResult').setAttribute('href', mailHref);
+                lastSubmissionPayload = collectSubmissionPayload(data, scores, winner, budgetText, nextText);
+                const mailSubject = `品牌预诊结果｜${data.get('brandName') || '未命名项目'}`;
+                lastMailHref = `mailto:childe-chan@qq.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(lastSummary)}`;
+                mailButton.textContent = '发送预诊结果';
 
                 result.classList.add('is-visible');
                 result.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -415,18 +509,52 @@
             form.addEventListener('reset', () => {
                 result.classList.remove('is-visible');
                 lastSummary = '';
+                lastSubmissionPayload = null;
             });
 
             copyButton.addEventListener('click', async () => {
                 if (!lastSummary) return;
-                try {
-                    await navigator.clipboard.writeText(lastSummary);
+                const copied = await copyText(lastSummary);
+                if (copied) {
                     copyButton.textContent = '已复制摘要';
                     window.setTimeout(() => {
                         copyButton.textContent = '复制预诊摘要';
                     }, 2200);
-                } catch (error) {
+                } else {
                     copyButton.textContent = '复制失败，请手动选择';
+                }
+            });
+
+            mailButton.addEventListener('click', async () => {
+                if (!lastSummary || !lastSubmissionPayload) return;
+
+                mailButton.disabled = true;
+                mailButton.textContent = '正在发送';
+
+                try {
+                    await submitDiagnosisResult(lastSubmissionPayload);
+                    mailButton.textContent = '已发送预诊结果';
+                    copyButton.textContent = '摘要可复制留底';
+                    window.setTimeout(() => {
+                        mailButton.textContent = '发送预诊结果';
+                        copyButton.textContent = '复制预诊摘要';
+                        mailButton.disabled = false;
+                    }, 3200);
+                } catch (error) {
+                    const copied = await copyText(lastSummary);
+
+                    mailButton.textContent = '提交失败，打开邮箱备用';
+                    window.location.href = lastMailHref;
+
+                    window.setTimeout(() => {
+                        mailButton.textContent = copied ? '已复制，请粘贴到邮件' : '邮箱已打开，请手动复制';
+                        copyButton.textContent = copied ? '摘要已复制' : '复制失败，请手动选择';
+                        window.setTimeout(() => {
+                            mailButton.textContent = '发送预诊结果';
+                            copyButton.textContent = '复制预诊摘要';
+                            mailButton.disabled = false;
+                        }, 3200);
+                    }, 900);
                 }
             });
         })();
