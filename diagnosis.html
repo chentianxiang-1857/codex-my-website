@@ -283,7 +283,8 @@
             const mailButton = document.querySelector('#mailResult');
             const diagnosisApiBase = window.METHOD_IMAGINATION_API_BASE || 'https://api.methodimagination.com';
             let lastSummary = '';
-            let lastMailHref = 'mailto:childe-chan@qq.com';
+            const contactEmail = 'childe-chan@qq.com';
+            let lastMailHref = `mailto:${contactEmail}`;
             let lastSubmissionPayload = null;
 
             const stageMeta = {
@@ -504,8 +505,7 @@
 
                 lastSummary = collectFormText(data, scores, winner, budgetText, thirdPartyCount);
                 lastSubmissionPayload = collectSubmissionPayload(data, scores, winner, budgetText, nextText);
-                const mailSubject = `品牌预诊结果｜${data.get('brandName') || '未命名项目'}`;
-                lastMailHref = `mailto:childe-chan@qq.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(lastSummary)}`;
+                lastMailHref = `mailto:${contactEmail}`;
                 mailButton.textContent = '发送预诊结果';
 
                 result.classList.add('is-visible');
@@ -549,7 +549,7 @@
                 } catch (error) {
                     const copied = await copyText(lastSummary);
 
-                    mailButton.textContent = '提交失败，打开邮箱备用';
+                    mailButton.textContent = copied ? '摘要已复制，打开邮箱' : '打开邮箱备用';
                     window.location.href = lastMailHref;
 
                     window.setTimeout(() => {
